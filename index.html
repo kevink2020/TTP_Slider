@@ -11,30 +11,47 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f9fafb; }
+ <style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f9fafb; }
 
-    .slider-container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 1rem; }
+  .slider-container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 1rem; }
 
+  .quote-card {
+    background: linear-gradient(to bottom right, #1d4ed8, #1e3a8a);
+    border-radius: 1rem;
+    padding: 3rem;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .quote-text { color: #fde047; line-height: 1.25; margin-bottom: 1.5rem; font-weight: 900; }
+  .quote-author { color: #fde047; font-weight: 700; }
+
+  .slick-prev:before, .slick-next:before { color: #1e3a8a; }
+  .slick-dots li button:before { color: #1e3a8a; }
+  .slick-dots li.slick-active button:before { color: #1e3a8a; }
+
+  /* Mobile tweaks (Edit #1) */
+  @media (max-width: 600px) {
     .quote-card {
-      background: linear-gradient(to bottom right, #1d4ed8, #1e3a8a);
-      border-radius: 1rem;
-      padding: 3rem;
-      min-height: 400px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
+      padding: 1.25rem;
+      min-height: auto;
     }
 
-    .quote-text { color: #fde047; line-height: 1.25; margin-bottom: 1.5rem; font-weight: 900; }
-    .quote-author { color: #fde047; font-weight: 700; }
+    .quote-text {
+      font-size: 1.6rem !important;
+      line-height: 1.2;
+    }
 
-    .slick-prev:before, .slick-next:before { color: #1e3a8a; }
-    .slick-dots li button:before { color: #1e3a8a; }
-    .slick-dots li.slick-active button:before { color: #1e3a8a; }
-  </style>
+    .quote-author {
+      font-size: 1.1rem !important;
+    }
+  }
+</style>
 </head>
 
 <body>

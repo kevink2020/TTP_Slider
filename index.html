@@ -29,7 +29,7 @@
 
   <script type="text/babel">
     const { useState, useEffect } = React;
-    const Slider = window.ReactSlick;
+    const Slider = window.ReactSlick?.default || window.ReactSlick;
 
     const quotes = [
       { text: "Coach Sierra runs a phenomenal program with individual attention as well as group drills.", author: "Jenna Waddell" },

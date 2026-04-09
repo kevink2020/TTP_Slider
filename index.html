@@ -157,44 +157,51 @@
     </div>
   </div>
 
-  <script>
-    function getFontSize(text) {
-      const length = text.length;
-      if (length < 80) return "4rem";
-      else if (length < 150) return "3rem";
-      else if (length < 220) return "2.5rem";
-      else return "2rem";
-    }
-    function getAuthorFontSize(text) {
-      const length = text.length;
-      if (length < 80) return "1.875rem";
-      else if (length < 150) return "1.5rem";
-      else return "1.25rem";
-    }
+<script>
+  function getFontSize(text) {
+    const length = text.length;
+    if (length < 80) return "4rem";
+    else if (length < 150) return "3rem";
+    else if (length < 220) return "2.5rem";
+    else return "2rem";
+  }
+  function getAuthorFontSize(text) {
+    const length = text.length;
+    if (length < 80) return "1.875rem";
+    else if (length < 150) return "1.5rem";
+    else return "1.25rem";
+  }
 
-    // Apply dynamic font sizes (like your React version)
-    document.querySelectorAll(".quote-card").forEach((card) => {
-      const h2 = card.querySelector(".quote-text");
-      const p = card.querySelector(".quote-author");
-      if (!h2 || !p) return;
+  const isMobile = window.matchMedia("(max-width: 600px)").matches;
+
+  document.querySelectorAll(".quote-card").forEach((card) => {
+    const h2 = card.querySelector(".quote-text");
+    const p = card.querySelector(".quote-author");
+    if (!h2 || !p) return;
+
+    if (isMobile) {
+      // Let CSS control mobile sizes (prevents giant 4rem text)
+      h2.style.removeProperty("font-size");
+      p.style.removeProperty("font-size");
+    } else {
       h2.style.fontSize = getFontSize(h2.textContent || "");
       p.style.fontSize = getAuthorFontSize(h2.textContent || "");
-    });
+    }
+  });
 
-    // Initialize slick after DOM is ready
-    $(function () {
-      $(".quote-slider").slick({
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 4000,
-        pauseOnHover: true,
-        arrows: true
-      });
+  $(function () {
+    $(".quote-slider").slick({
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 4000,
+      pauseOnHover: true,
+      arrows: true
     });
-  </script>
+  });
+</script>
 </body>
 </html>

@@ -85,7 +85,7 @@
                   <h2 className="quote-text" style={{ fontSize: getFontSize(quote.text) }}>
                     {quote.text}
                   </h2>
-                  <p className="quote-author" style={{ fontSize: getAuthorFontSize(quote.text) }}>
+                  <p className="quote-author" style={{ fontSize: getAuthorFontSize(quote.author) }}>
                     -- {quote.author}
                   </p>
                 </div>
@@ -96,7 +96,7 @@
       );
     }
 
-    ReactDOM.render(<QuoteSlider />, document.getElementById('root'));
+    ReactDOM.createRoot(document.getElementById('root')).render(<QuoteSlider />);
   </script>
 </body>
 </html>

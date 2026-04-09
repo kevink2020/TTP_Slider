@@ -1,102 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TopTier Prospects Testimonials</title>
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script src="https://unpkg.com/react-slick@0.30.2/dist/react-slick.min.js"></script>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f9fafb; }
-    .slider-container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 1rem; }
-    .quote-card { background: linear-gradient(to bottom right, #1d4ed8, #1e3a8a); border-radius: 1rem; padding: 3rem; min-height: 400px; display: flex; flex-direction: column; justify-content: center; margin: 0 0.5rem; }
-    .quote-text { color: #fde047; line-height: 1.25; margin-bottom: 1.5rem; font-weight: 900; }
-    .quote-author { color: #fde047; }
-    .slick-prev:before, .slick-next:before { color: #1e3a8a; }
-    .slick-dots li button:before { color: #1e3a8a; }
-    .slick-dots li.slick-active button:before { color: #1e3a8a; }
-  </style>
+    <title>Slider Example</title>
+    <script src="path/to/slider.js"></script>
 </head>
 <body>
-  <div id="root"></div>
-
-  <script type="text/babel">
-    const { useState, useEffect } = React;
-    const Slider = window.Slider;
-
-    const quotes = [
-      { text: "Coach Sierra runs a phenomenal program with individual attention as well as group drills.", author: "Jenna Waddell" },
-      { text: "Love the training at TTP for my son! Absolutely worth every penny!!!!!! 100% recommend this to anybody!", author: "Rachel Cogan" },
-      { text: "Jonathan is great at connecting with kids and getting results. My son was in a slump, and after just one session his swing was back on track. Highly recommend TopTier Prospects.", author: "Joshua Briggs" },
-      { text: "Jonathan runs an incredible camp and is an outstanding teacher of the game. He has a great way of connecting with kids and helping them grow. Highly recommend TopTier Prospects.", author: "David Eckstein" },
-      { text: "Great guy awesome instructor, my boys loved and also my entire travel team as well !!!!!", author: "Mike" },
-      { text: "Great guy and even better instructor! He really has a gift for communicating so his instruction can be easily and quickly interpreted by the player. Highly recommended!", author: "Aaron DeSilva" },
-      { text: "My son just started working with Jonathan and absolutely loves him and his training!", author: "Ivy Baker" },
-      { text: "If they come, they will come back. Best instruction we have found anywhere in the Raleigh area.", author: "Carrie Martin Hall" },
-      { text: "TopTier Prospects is one of the best in the Raleigh Durham area", author: "Terry Joseph" },
-      { text: "TopTier Prospects is amazing!!!! Jonathan is the best!", author: "Jennie Eckstein" },
-      { text: "We're incredibly thankful for everything my son has learned at Top Tier Prospects. He's been training with Coach Jon since day one, and we're still going strong. We look forward to continuing as the program grows.", author: "Darryl Council" },
-      { text: "Coach Jonathan and Top Tier Prospects have made a huge impact on our son Eli's growth both on and off the field. Over the past 2 years, Eli has improved tremendously in his skills, speed, baseball IQ, and confidence. More than a trainer, Coach Jonathan has been a true mentor, and we're incredibly grateful to be part of the Top Tier Prospects family.", author: "The Hamer Family" },
-      { text: "Top Tier Prospects didn't just improve my son's swing — it helped develop him as a player and person. Derek has grown tremendously in his mechanics, confidence, and overall approach to the game. Coach Jonathan truly invests in each athlete beyond just baseball.", author: "Katelyn Dumar" },
-      { text: "After my son struggled following a growth spurt, Jonathan at Top Tier Prospects helped transform his swing in just a few months. He's now back to hitting line drives with confidence. Highly recommend TTP.", author: "The Laskey Family" }
-    ];
-
-    function getFontSize(text) {
-      const length = text.length;
-      if (length < 80) return "4rem";
-      else if (length < 150) return "3rem";
-      else if (length < 220) return "2.5rem";
-      else return "2rem";
-    }
-
-    function getAuthorFontSize(text) {
-      const length = text.length;
-      if (length < 80) return "1.875rem";
-      else if (length < 150) return "1.5rem";
-      else return "1.25rem";
-    }
-
-    function QuoteSlider() {
-      const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 4000,
-        pauseOnHover: true,
-        arrows: true
-      };
-
-      return (
-        <div className="slider-container">
-          <Slider {...settings}>
-            {quotes.map((quote, index) => (
-              <div key={index}>
-                <div className="quote-card">
-                  <h2 className="quote-text" style={{ fontSize: getFontSize(quote.text) }}>
-                    {quote.text}
-                  </h2>
-                  <p className="quote-author" style={{ fontSize: getAuthorFontSize(quote.text) }}>
-                    -- {quote.author}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </Slider>
-        </div>
-      );
-    }
-
-    ReactDOM.render(<QuoteSlider />, document.getElementById('root'));
-  </script>
+    <script>
+        const Slider = window.ReactSlick;
+        // additional JavaScript code...
+    </script>
 </body>
 </html>
